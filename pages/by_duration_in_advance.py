@@ -16,10 +16,15 @@ st.write('**GDPS**: 10 days')
 st.write('**RDPS**: 7 days')
 st.write('**HRDPS**: 2 days')
 st.write('The purpose of this analysis is to compare the performance of the EC models when they are forecasting weather for the same weather date at the same prediction time.')
+st.write('On this page, prediction timeframes have been separated into buckets quantified by the number of hours a prediction has been made in advance of the observed weather date. For example, a "(0,6)" timeframe means that the prediction was made 0-6 hours before the weather was observed.')
 
 st.header('Temperature')
 temp_df = pd.read_json(TEMPS_JSON_PATH, orient='index')
 temp_df.drop(columns=['forecast_r2', 'forecast_sample_size'], inplace=True)
+
+st.write('Note: the results for this temperature analysis were unexpected and indicate that more work is required.')
+st.write('The performance of the "raw" (non-bias-adjusted) EC models was much lower than expected in all instances other than for GDPS in the (0,6) hour timeframe.')
+st.write('The chart below shows how the R² scores for the bias-adjusted GDPS model on training and test datasets alternate between high and low, indicating that over/underfitting is happening on the linear regression model.')
 
 serieses = []
 for row in temp_df.itertuples():

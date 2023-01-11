@@ -20,4 +20,7 @@ col3.metric("Wind Speed", str(mean_wx_values['wind_speed']) + " km/h")
 col4.metric("Wind Direction", str(mean_wx_values['wind_dir']) + "°")
 
 st.write("R² baseline score of 0.0")
+st.write("**_Important note:_** R² scores throughout this project were calculated using [Sci-kit Learn's implementation of metrics.r2_score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html), which differs from the concept of R² in pure statistics in the sense that negative R² values are possible. A negative R² score indicates that the model performed _worse_ than the very naive prediction method of always predicting the mean value for the weather variable in question.")
+
+st.write("Analysis of Environment Canada weather model data performed on all BC fire weather stations between April 1 and October 31, 2022. In total, there were over 38 million records to analyze.")
 

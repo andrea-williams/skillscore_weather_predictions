@@ -40,6 +40,10 @@ def get_tooltip_text():
 
 st.title('Skill-Scoring by Weather Station')
 
+st.subheader('How to interpret the map')
+st.write('Each dot on the map represents a weather station. Green dots correspond to positive R² scores, while red dots correspond to negative R² scores.')
+st.write('The larger the dot on the map, the larger the absolute value of a station\'s R² score. For example, a large green dot means that the station has a large positive R² score. A small red dot means that the station has an R² score that is slightly below zero.')
+
 st.header('Temperature')
 
 temps_df = pd.read_json(TEMPS_JSON_PATH, orient='index')
@@ -83,8 +87,6 @@ st.header('Relative Humidity')
 
 rh_df = pd.read_json(RH_JSON_PATH, orient='index')
 
-
-# st.bar_chart(rh_df, y=rh_categories, x=rh_stations, use_container_width=True)
 
 map_rh_df = rh_df[['lon','lat','name', category]]
 map_rh_df.dropna(inplace=True)
