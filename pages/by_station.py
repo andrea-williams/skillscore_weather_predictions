@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
-TEMPS_JSON_PATH = '/Users/awilliam/Documents/skillscore_weather_predictions/temperatures_with_station_data.json'
-RH_JSON_PATH = '/Users/awilliam/Documents/skillscore_weather_predictions/rh_with_station_data.json'
-WIND_DIR_JSON_PATH = '/Users/awilliam/Documents/skillscore_weather_predictions/wind_dir_with_station_data.json'
-WIND_SPEED_JSON_PATH = '/Users/awilliam/Documents/skillscore_weather_predictions/wind_speed_with_station_data.json'
+TEMPS_JSON_PATH = './temperatures_with_station_data.json'
+RH_JSON_PATH = './rh_with_station_data.json'
+WIND_DIR_JSON_PATH = './wind_dir_with_station_data.json'
+WIND_SPEED_JSON_PATH = './wind_speed_with_station_data.json'
 
 CATEGORIES = ['raw_gdps_r2', 'bias_adj_gdps_train_r2', 'bias_adj_gdps_train_r2', 'raw_rdps_r2', 'bias_adj_rdps_train_r2', 'bias_adj_rdps_test_r2', 'raw_hrdps_r2', 'bias_adj_hrdps_train_r2', 'bias_adj_hrdps_test_r2']
 
